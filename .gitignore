@@ -1,0 +1,7 @@
+# DON'T PANIC!
+
+.env
+
+node_modules
+
+.DS_Store
