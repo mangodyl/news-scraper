@@ -2,13 +2,41 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Monoton|Playfair+Display|Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>MVC With Cats!</title>
+		<title>Music News Scraper!</title>
 		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/assets/js/cats.js"></script>
+		<script src="/assets/js/index.js"></script>
 	</head>
 	<body>
-		{{{ body }}}
+		<div id="content">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<a class="navbar-brand" href="#">News Scraper!</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+	
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Saved Articles</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+	
+			<div class="container text-center">
+				<h1 id="main-heading">MUSIC - NEWS</h1>
+			</div>
+
+			{{{ body }}}
+
+		</div>
 	</body>
-</html>
+	
+	</html>
