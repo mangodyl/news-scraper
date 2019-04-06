@@ -12,4 +12,13 @@ module.exports = function(app) {
             res.json(data)
         });
     });
+
+    app.post("/api/note", (req, res) => {
+        console.log(req.body)
+        db.Note.create(req.body).then(dbNote => {
+            console.log(dbNote);
+        }).catch(err => {
+            console.log(err);
+        });
+    });
 };
