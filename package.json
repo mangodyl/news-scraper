@@ -4,7 +4,8 @@
   "description": "Scrape articles from a news source and save favourites!",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "listen": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
