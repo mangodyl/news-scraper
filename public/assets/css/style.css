@@ -1,0 +1,29 @@
+body {
+    background-color: #F87060;
+}
+
+
+#main-heading {
+    font-family: 'Monoton', cursive;
+    font-size: 5em;
+    color: #102542;
+    margin: 30px 0 50px 0;
+}
+
+.navbar  {
+    background-color: #DDFFD9;
+}
+
+.scrape-div {
+    background-color: #eeeeee;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.articleTitle {
+    font-family: 'Playfair Display', serif;
+}
+
+.articleText {
+    font-family: 'Roboto', sans-serif;
+}

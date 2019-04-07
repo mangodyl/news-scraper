@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Saved Articles:</h1>
+        <p class="lead">Read your favourites and add notes!</p>
+        <hr class="my-4">
+
+        <div id="article-div">
+            {{#each articles}}
+            <div data-id="{{_id}}" class="article">
+                <h5 class="articleTitle">{{title}}</h5>
+                <a href="{{link}}">
+                    <p>Click here to read in full...</p>
+                </a>
+                <p class="articleText"><em>{{text}}</em></p>
+                <button data-id="{{_id}}" type="button" class="btn btn-dark unsave-article">Unsave article</button>
+                <button data-id="{{_id}}" type="button" class="btn btn-light add-note" data-toggle="modal"
+                    data-target="#noteModal{{_id}}">Add Note</button>
+
+                {{!-- Modal --}}
+                <div class="modal fade" id="noteModal{{_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Article Note</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Note Title:</label>
+                                        <input id="note-title-{{_id}}" type="text" class="form-control" value="empty">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="col-form-label">Note Text:</label>
+                                        <textarea class="form-control" id="note-body-{{_id}}"></textarea>
+                                    </div>
+                                </form>
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary submit-note" data-id="{{_id}}" data-dismiss="modal">Save note</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4">
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

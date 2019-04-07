@@ -14,12 +14,15 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Routes
-require('./routes/htmlRoutes')(app);
 require('./routes/scraper')(app);
+require('./routes/htmlRoutes')(app);
+require('./routes/articleRoutes')(app);
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/articlesdb";
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
+    console.log("Database connected");
+});
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}!`);
