@@ -14,7 +14,7 @@
                 <p class="articleText"><em>{{text}}</em></p>
                 <button data-id="{{_id}}" type="button" class="btn btn-dark unsave-article">Unsave article</button>
                 <button data-id="{{_id}}" type="button" class="btn btn-light add-note" data-toggle="modal"
-                    data-target="#noteModal{{_id}}">Add Note</button>
+                    data-target="#noteModal{{_id}}">See Note</button>
 
                 {{!-- Modal --}}
                 <div class="modal fade" id="noteModal{{_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -42,6 +42,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary submit-note" data-id="{{_id}}" data-dismiss="modal">Save note</button>
+                                <button type="button" class="btn btn-danger delete-note" data-id="{{_id}}" data-dismiss="modal">Delete note</button>
                             </div>
                         </div>
                     </div>

@@ -33,10 +33,26 @@ module.exports = function(app) {
             dbNote id: ${dbNote._id}
             -----------`)
             db.Article.updateOne({ _id: req.params.id }, { note: dbNote._id}).then(response => {
-                console.log("Response from article update: " + response);
+                console.log("updated");
             })
         }).catch(err => {
             console.log(err);
         });
+    });
+
+    app.post("/api/deletenote/:id", (req, res) => {
+        db.Article.findOne({ _id: req.params.id })
+            .populate("note")
+            .then(dbArticle => {
+                console.log(dbArticle);
+                const noteId = dbArticle.note._id;
+                return db.Note.findByIdAndRemove(noteId);
+            })
+            .then(() => {
+                res.json({ "message": "success" });
+            })
+            .catch(err => {
+                res.json(err);
+            });
     });
 };

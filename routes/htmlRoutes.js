@@ -10,10 +10,8 @@ module.exports = function(app) {
             if (error) {
                 console.log(error);
             } else if (data.length === 0) {
-                console.log("rendering index again");
                 res.render("index")
             } else {
-                console.log("rendering articles hbars");
                 const hbarsObj = {
                     articles: data
                 };

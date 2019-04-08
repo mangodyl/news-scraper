@@ -1,5 +1,6 @@
 body {
     background-color: #F87060;
+    padding-top: 70px;
 }
 
 
@@ -12,6 +13,9 @@ body {
 
 .navbar  {
     background-color: #DDFFD9;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .scrape-div {
